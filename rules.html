@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pravidlá</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .rules-container {
+            max-width: 1200px;
+            margin: 120px auto 50px;
+            padding: 2rem;
+        }
+
+        .rules-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .rules-header h2 {
+            font-size: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .rules-header p {
+            color: #888;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .rule-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .rule-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 102, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .rule-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .rule-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+            border-color: rgba(0, 102, 255, 0.3);
+        }
+
+        .rule-card .rule-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 3rem;
+            font-weight: bold;
+            color: rgba(0, 102, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .rule-card:hover .rule-number {
+            transform: scale(1.2);
+            color: rgba(0, 102, 255, 0.2);
+        }
+
+        .rule-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .rule-card h3 i {
+            font-size: 1.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .rule-card:hover h3 i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .rule-card p {
+            line-height: 1.6;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .rule-card .rule-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rule-card .rule-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rule-card .rule-details li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #888;
+        }
+
+        .rule-card .rule-details li::before {
+            content: '•';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .rule-card .rule-details li:hover {
+            color: var(--text-color);
+            transform: translateX(5px);
+            transition: all 0.3s ease;
+        }
+
+        .rule-card:nth-child(1) { animation-delay: 0.1s; }
+        .rule-card:nth-child(2) { animation-delay: 0.2s; }
+        .rule-card:nth-child(3) { animation-delay: 0.3s; }
+        .rule-card:nth-child(4) { animation-delay: 0.4s; }
+        .rule-card:nth-child(5) { animation-delay: 0.5s; }
+        .rule-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .rules-footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            animation: fadeInUp 0.8s ease 0.7s forwards;
+            opacity: 0;
+        }
+
+        .rules-footer p {
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .rules-footer .warning {
+            color: #ff4444;
+            font-weight: bold;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-gamepad"></i>
+            <span>Radiant RolePlay</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Domov</a>
+            <a href="rules.html" class="active">Pravidla</a>
+            <a href="team.html">Náš Team</a>
+            <a href="discord.html">Discord</a>
+        </div>
+    </nav>
+
+    <div class="rules-container">
+        <div class="rules-header">
+            <h2>Pravidla Severu</h2>
+            <p>Aby sme zabezpečili spravodlivý a príjemný herný zážitok pre všetkých, prosím, dodržiavaj tieto pravidlá.</p>
+        </div>
+        
+        <div class="rules-grid">
+            <div class="rule-card">
+                <div class="rule-number">01</div>
+                <h3><i class="fas fa-handshake"></i> Rešpekt</h3>
+                <p>Správajte sa ku všetkým hráčom s úctou a dôstojnosťou. Rešpektujúce správanie je základom našej komunity.</p>
+                <div class="rule-details">
+                    <ul>
+                        <li>Žiadne urážky ani diskriminácia.</li>
+                        <li>Žiadne toxické správanie.</li>
+                        <li>Žiadne obťažovanie ostatných hráčov.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-number">02</div>
+                <h3><i class="fas fa-theater-masks"></i> Roleplay Pravidla</h3>
+                <p>Realistický roleplay je srdcom nášho servera. Dodržiavajte pravidlá roleplayu pre autentický zážitok.</p>
+                <div class="rule-details">
+                    <ul>
+                        <li>COMMING SOON</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-number">03</div>
+                <h3><i class="fas fa-shield-alt"></i> Všeobecné pravidlá</h3>
+                <p>Dodatočné dôležité pravidlá</p>
+                <div class="rule-details">
+                    <ul>
+                        <li>Žiadne mody ani cheaty.</li>
+                        <li>Žiadne zneužívanie chýb (bugov).</li>
+                        <li>Rešpektujte administráciu servera.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="rules-footer">
+            <p>Tím si vyhradzuje právo podniknúť primerané kroky pri porušení pravidiel.</p>
+            <p class="warning">Opakované porušovanie môže viesť k Perma Banu!</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="imprint.html" target="_blank">Tlačové údaje</a>
+                <a href="privacy.html" target="_blank">Súkromie</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2025 FiveM server. Všetky práva vyhradené.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

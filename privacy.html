@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ochrana osobných údajov</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .privacy-container {
+            max-width: 1200px;
+            margin: 120px auto 50px;
+            padding: 2rem;
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .privacy-header h2 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-header p {
+            color: #888;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .privacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .privacy-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .privacy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+        }
+
+        .privacy-title {
+            color: #0066ff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .privacy-text {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .privacy-text ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .privacy-text li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .privacy-text li::before {
+            content: '•';
+            color: #0066ff;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-gamepad"></i>
+            <span>FiveM Server</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Domov</a>
+            <a href="rules.html">Pravidla</a>
+            <a href="team.html">Náš Team</a>
+            <a href="discord.html">Discord</a>
+        </div>
+    </nav>
+
+    <div class="privacy-container">
+        <div class="privacy-header">
+            <h2>Ochrana osobných údajov</h2>
+            <p>Informácie o zhromažďovaní a používaní údajov</p>
+        </div>
+
+        <div class="privacy-grid">
+            <div class="privacy-card">
+                <h3 class="privacy-title"><i class="fas fa-database"></i> Zber údajov</h3>
+                <div class="privacy-text">
+                    <p>Zhromažďujeme nasledujúce údaje:</p>
+                    <ul>
+                        <li>Discord používateľské meno a ID</li>
+                        <li>Herné štatistiky a úspechy</li>
+                        <li>Záznamy interakcií so serverom</li>
+                        <li>Technické informácie pre podporu</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="privacy-card">
+                <h3 class="privacy-title"><i class="fas fa-cookie"></i> Cookies</h3>
+                <div class="privacy-text">
+                    <p>Používame cookies na:</p>
+                    <ul>
+                        <li>Zapamätať si tvoje nastavenia</li>
+                        <li>Zlepšenie výkonu webovej stránky</li>
+                        <li>Analyzovanie používania webovej stránky</li>
+                        <li>Poskytovanie personalizovaného obsahu</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="privacy-card">
+                <h3 class="privacy-title"><i class="fas fa-shield-alt"></i> Zabezpečenie údajov</h3>
+                <div class="privacy-text">
+                    <p>Implementujeme bezpečnostné opatrenia:</p>
+                    <ul>
+                        <li>Šifrovaný prenos údajov</li>
+                        <li>Pravidelné bezpečnostné aktualizácie</li>
+                        <li>Systémy kontroly prístupu</li>
+                        <li>Bezpečná serverová infraštruktúra</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="privacy-card">
+                <h3 class="privacy-title"><i class="fas fa-user-shield"></i> Tvoje práva</h3>
+                <div class="privacy-text">
+                    <p>You have the right to:</p>
+                    <ul>
+                        <li>Prístup k tvojim osobným údajom</li>
+                        <li>Žiadosť o opravu údajov</li>
+                        <li>Žiadosť o vymazanie údajov</li>
+                        <li>Námietka voči spracovaniu údajov</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="imprint.html" target="_blank">Tlačové údaje</a>
+                <a href="privacy.html" target="_blank">Ochrana osobných údajov</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2025 FiveM server. Všetky práva vyhradené.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
